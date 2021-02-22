@@ -86,9 +86,21 @@ namespace Vacay.Controllers
 
     // DELETE
 
+    [HttpDelete("{id}")]
+    public ActionResult<Flight> Delete(int id)
+    {
+      try
+      {
+        return Ok(_service.Delete(id));
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
 
 
 
-
+    }
   }
 }
+

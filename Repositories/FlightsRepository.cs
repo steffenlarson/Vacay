@@ -68,7 +68,11 @@ namespace Vacay.Repository
 
     // DELETE
 
-
+    internal void Delete(Flight flight)
+    {
+      string sql = "DELETE FROM flight WHERE id = @Id";
+      _db.Execute(sql, flight);
+    }
 
 
 
