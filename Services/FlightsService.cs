@@ -30,7 +30,10 @@ namespace Vacay.Services
 
     // POST
 
-
+    internal Flight Create(Flight newFlight)
+    {
+      return _repo.Create(newFlight);
+    }
 
     // PUT
 

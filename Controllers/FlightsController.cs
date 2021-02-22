@@ -42,7 +42,18 @@ namespace Vacay.Controllers
 
     // POST
 
+    public ActionResult<Flight> Create([FromBody] Flight newFlight)
+    {
+      try
+      {
+        return Ok(_service.Create(newFlight));
+      }
+      catch (Exception e)
+      {
 
+        return BadRequest(e.Message);
+      }
+    }
 
     // PUT
 

@@ -32,7 +32,18 @@ namespace Vacay.Repository
 
     // POST
 
-
+    internal Flight Create(Flight newFlight)
+    {
+      string sql = @"
+         INSERT INTO flight
+         (name, price, description, landings)
+         VALUES
+         (@Name, @Price, @Description, @Landings);
+         SELECT LAST_INSERT_ID();";
+      int Id = _db.ExecuteScalar<int>(sql, newFlight);
+      newFlight.Id = Id;
+      return newFlight;
+    }
 
     // PUT
 

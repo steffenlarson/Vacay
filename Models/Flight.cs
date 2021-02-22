@@ -5,6 +5,6 @@ namespace Vacay.Models
 {
   public class Flight : Vacation
   {
-    public string landing { get; set; }
+    public string Landings { get; set; }
   }
 }
