@@ -27,7 +27,12 @@ namespace Vacay.Repository
     }
 
     // GETBYID
-
+    internal Flight getById(int id)
+    {
+      string sql = "SELECT * FROM flight WHERE id = @id;";
+      // REVIEW Why do we make the id below an object???
+      return _db.QueryFirstOrDefault<Flight>(sql, new { id });
+    }
 
 
     // POST
@@ -46,7 +51,19 @@ namespace Vacay.Repository
     }
 
     // PUT
-
+    internal Flight Edit(Flight original)
+    {
+      string sql = @"
+          UPDATE flight
+          SET
+              name = @Name,
+              price = @Price,
+              description = @Description,
+              landings = @Landings
+          WHERE id = @Id;
+          SELECT * FROM flight WHERE id = @Id;";
+      return _db.QueryFirstOrDefault<Flight>(sql, original);
+    }
 
 
     // DELETE

@@ -25,7 +25,15 @@ namespace Vacay.Services
     }
 
     // GETBYID
-
+    internal Flight getById(int id)
+    {
+      Flight flight = _repo.getById(id);
+      if (flight == null)
+      {
+        throw new Exception("invalid Id");
+      }
+      return flight;
+    }
 
 
     // POST
@@ -36,7 +44,17 @@ namespace Vacay.Services
     }
 
     // PUT
+    internal Flight Edit(Flight editFlight)
+    {
+      Flight original = getById(editFlight.Id);
 
+      original.Name = editFlight.Name != null ? editFlight.Name : original.Name;
+      original.Price = editFlight.Price > 0 ? editFlight.Price : original.Price;
+      original.Description = editFlight.Description != null ? editFlight.Description : original.Description;
+      original.Landings = editFlight.Landings != null ? editFlight.Landings : original.Landings;
+
+      return _repo.Edit(original);
+    }
 
 
     // DELETE

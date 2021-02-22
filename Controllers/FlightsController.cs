@@ -37,10 +37,22 @@ namespace Vacay.Controllers
 
 
     // GETBYID
+    [HttpGet("{id}")]
+    public ActionResult<Flight> getByID(int id)
+    {
+      try
+      {
+        return Ok(_service.getById(id));
+      }
+      catch (Exception e)
+      {
 
-
+        return BadRequest(e.Message);
+      }
+    }
 
     // POST
+    [HttpPost]
 
     public ActionResult<Flight> Create([FromBody] Flight newFlight)
     {
@@ -56,7 +68,20 @@ namespace Vacay.Controllers
     }
 
     // PUT
+    [HttpPut("{id}")]
+    public ActionResult<Flight> Edit([FromBody] Flight editFlight, int id)
+    {
+      try
+      {
+        editFlight.Id = id;
+        return Ok(_service.Edit(editFlight));
+      }
+      catch (Exception e)
+      {
 
+        return BadRequest(e.Message);
+      }
+    }
 
 
     // DELETE
