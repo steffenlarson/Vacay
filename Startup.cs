@@ -13,7 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Vacay.Services;
-using Vacay.Repositories;
+using Vacay.Repository;
 using MySqlConnector;
 
 namespace Vacay
@@ -45,7 +45,7 @@ namespace Vacay
       services.AddTransient<CruisesService>();
       services.AddTransient<FlightsService>();
 
-      services.AddTransient<FlightsRepository>();
+      services.AddTransient<CruisesRepository>();
       services.AddTransient<FlightsRepository>();
 
     }

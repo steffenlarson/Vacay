@@ -1,6 +1,6 @@
-namespace Vacay.Repositories
+namespace Vacay.Repository
 {
-  public class FlightsRepositories
+  public class FlightsRepository
   {
 
   }

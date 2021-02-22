@@ -1,7 +1,7 @@
-namespace Vacay.Repositories
+namespace Vacay.Repository
 {
-    public class CruisesRepositories
-    {
-        
-    }
+  public class CruisesRepository
+  {
+
+  }
 }
