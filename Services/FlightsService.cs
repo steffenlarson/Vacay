@@ -58,12 +58,12 @@ namespace Vacay.Services
 
 
     // DELETE
-    internal Flight Delete(int id)
+    internal String Delete(int id)
     {
 
       Flight flight = getById(id);
       _repo.Delete(flight);
-      return flight;
+      return "Successfully Delorted";
     }
 
 
