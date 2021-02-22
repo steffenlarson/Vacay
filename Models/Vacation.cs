@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Vacay.Models
 {
-  abstract class Vacation
+  public abstract class Vacation
   {
     public int Id { get; set; }
     [Required]
