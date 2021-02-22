@@ -21,7 +21,7 @@ namespace Vacay.Services
 
     internal IEnumerable<Flight> getAll()
     {
-      return _repo.getALl();
+      return _repo.getAll();
     }
 
     // GETBYID

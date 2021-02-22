@@ -1,4 +1,4 @@
-USE vacation1;
+-- USE vacation1;
 
 -- CREATE TABLE cruise
 -- (

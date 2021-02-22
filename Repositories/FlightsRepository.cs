@@ -22,7 +22,7 @@ namespace Vacay.Repository
 
     public IEnumerable<Flight> getAll()
     {
-      string sql = "SLECT * FROM flights;";
+      string sql = "SELECT * FROM flight;";
       return _db.Query<Flight>(sql);
     }
 
